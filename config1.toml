@@ -1,0 +1,38 @@
+[TAIPY]
+read_entity_retry = "3:int"
+
+[DATA_NODE.initial_dataset]
+storage_type = "csv"
+default_path = "df.csv"
+
+[DATA_NODE.cleaned_dataset]
+
+[DATA_NODE.model_output]
+
+[DATA_NODE.predictions]
+
+[TASK.clean_data_task]
+function = "__main__.clean_data:function"
+inputs = [ "initial_dataset:SECTION",]
+outputs = [ "cleaned_dataset:SECTION",]
+skippable = "True:bool"
+
+[TASK.model_retraining_task]
+function = "__main__.retrained_model:function"
+inputs = [ "cleaned_dataset:SECTION",]
+outputs = [ "model_output:SECTION",]
+skippable = "True:bool"
+
+[TASK.predict_task]
+function = "__main__.predict:function"
+inputs = [ "model_output:SECTION",]
+outputs = [ "predictions:SECTION",]
+skippable = "True:bool"
+
+[PIPELINE.stock_pipeline]
+tasks = [ "clean_data_task:SECTION", "model_retraining_task:SECTION", "predict_task:SECTION",]
+
+[SCENARIO.stock]
+pipelines = [ "stock_pipeline:SECTION",]
+
+[SCENARIO.stock.comparators]

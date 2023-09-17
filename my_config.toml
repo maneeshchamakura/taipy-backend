@@ -1,0 +1,20 @@
+[TAIPY]
+read_entity_retry = "3:int"
+
+[DATA_NODE.name]
+
+[DATA_NODE.message]
+
+[TASK.build_msg]
+function = "functions.build_message:function"
+inputs = [ "name:SECTION",]
+outputs = [ "message:SECTION",]
+skippable = "False:bool"
+
+[PIPELINE.scenario_pipeline]
+tasks = [ "build_msg:SECTION",]
+
+[SCENARIO.scenario]
+pipelines = [ "scenario_pipeline:SECTION",]
+
+[SCENARIO.scenario.comparators]
