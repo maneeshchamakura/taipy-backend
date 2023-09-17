@@ -1,6 +1,6 @@
 taipy
+sklearn
 numpy
 pandas
 yfinance
 requests
-marshmallow-sqlalchemy
