@@ -180,4 +180,4 @@ def check_access_token():
     #     print(request.endpoint, "endpoint")
         return redirect("/login")
 
-gui = Gui(pages=pages, flask=app).run()
+gui = Gui(pages=pages, flask=app).run(debug=False)
