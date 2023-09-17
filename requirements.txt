@@ -1,5 +1,5 @@
 taipy
-sklearn
+scikit-learn
 numpy
 pandas
 yfinance
