@@ -1,6 +1,7 @@
 taipy
 scikit-learn
+yfinance
+prophet
 numpy
 pandas
-yfinance
 requests
