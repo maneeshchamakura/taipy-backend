@@ -1,6 +1,6 @@
+taipy
 numpy
 pandas
 yfinance
-taipy
 requests
 marshmallow-sqlalchemy
